@@ -28,10 +28,10 @@ export class ComputerRemoveUserCommand extends Command<IOfficeState, Payload> {
     const clientId = client.sessionId
     const player = this.state.players.get(clientId)
 
-    if (computer.connectedUser.has(clientId)) {
+    if (computer?.connectedUser.has(clientId)) {
       computer.connectedUser.delete(clientId)
     }
-    if (player && computer.connectedWebRTCId.has(player.webRTCId)) {
+    if (player && computer?.connectedWebRTCId.has(player.webRTCId)) {
       computer.connectedWebRTCId.delete(player.webRTCId)
     }
   }
